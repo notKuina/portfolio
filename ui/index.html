@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+  <style>
+    @keyframes spin-slow {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 20s linear infinite;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="m-0 border-0 bg-black text-white scroll-smooth" id="top">
+
+  <!-- Fixed Header -->
+  <header class="fixed top-0 left-0 right-0 bg-black z-50 px-6 py-4 shadow-md">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-4">
+
+      <!-- Logo Section -->
+      <div>
+        <!-- Visible on medium and above -->
+        <h1 class="text-2xl text-green-500 font-semibold hidden md:block" style="font-family: 'Baskerville', serif;">
+          Samjhana Gharti Magar</h1>
+      </div>
+
+      <!-- Navbar Links -->
+      <nav aria-label="Primary navigation" class="hidden lg:block">
+        <ul id="navbarLinks" class="flex gap-6 text-white font-body text-md text-center">
+          <li class="group">
+            <a href="#about" onclick="scrollToSection('about')"
+              class="cursor-pointer hover:text-green-700 transition-all duration-500">About Me</a>
+            <div class="mx-auto bg-green-700 w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
+          </li>
+          <li class="group">
+            <a href="#skills" onclick="scrollToSection('skills')"
+              class="cursor-pointer hover:text-green-700 transition-all duration-500">Skills</a>
+            <div class="mx-auto bg-green-700 w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
+          </li>
+          <li class="group">
+            <a href="#experience" onclick="scrollToSection('experience')"
+              class="cursor-pointer hover:text-green-700 transition-all duration-500">Experience</a>
+            <div class="mx-auto bg-green-700 w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
+          </li>
+          <li class="group">
+            <a href="#projects" onclick="scrollToSection('projects')"
+              class="cursor-pointer hover:text-green-700 transition-all duration-500">Projects</a>
+            <div class="mx-auto bg-green-700 w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
+          </li>
+          <li class="group">
+            <a href="#contact" onclick="scrollToSection('contact')"
+              class="cursor-pointer hover:text-green-700 transition-all duration-500">Contact</a>
+            <div class="mx-auto bg-green-700 w-0 group-hover:w-full h-[1px] transition-all duration-500"></div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- resume Button -->
+      <div class="hidden sm:block">
+        <button onclick="downloadCV()"
+          class="border border-green-700 rounded-full py-2 px-4 text-lg flex gap-2 items-center hover:bg-green-700 transition-all duration-500 cursor-pointer">
+          <span class="text-white hover:text-white transition-all duration-500">Resume</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="pt-40 pb-16">
+    <div class="flex flex-col md:flex-row max-w-[1200px] mx-auto justify-between items-center relative px-4">
+      <!-- Hero Text -->
+      <div id="hero-text" class=" md:w-1/2  text-white">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Welcome to My Portfolio</h1>
+        <p class="text-gray-300 text-base md:text-lg mb-8">
+          I build amazing web experiences using modern technologies.
+        </p>
+        <button onclick="scrollToContact()"
+          class="border border-green-700 rounded-full py-2 px-4 text-base md:text-lg   gap-2 items-center mt-6 md:mt-10 hover:bg-green-700 transition-all duration-500 cursor-pointer self-center md:self-start">
+          <span class="text-white hover:text-white transition-all duration-500"> Get in Touch</span>
+        </button>
+      </div>
+
+      <!-- Hero Pic -->
+      <div id="hero-pic" class="w-full md:w-1/2 flex justify-center mt-8 md:mt-0 relative">
+        <img src="./images/pfp.jpeg" alt="samjhana"
+          class="w-full max-w-[400px] md:max-w-[570px] rounded-lg shadow-lg z-10 object-cover" />
+        <!-- Background hexagons etc... -->
+        <!-- Background Hexagons (unchanged, kept for effect) -->
+        <div class="absolute bottom-[-20%] -z-10 flex justify-center items-center rotate-90 w-full h-full">
+          <i
+            class="fas fa-hexagon text-orange-500 opacity-70 md:h-[90%] sm:h-[120%] min-h-[600px] animate-spin-slow text-[500px]"></i>
+        </div>
+
+        <div class="absolute bottom-[-20%] -z-10 flex justify-center items-center rotate-90 w-full h-full">
+          <i
+            class="fas fa-hexagon text-orange-500 opacity-70 blur-lg md:h-[90%] sm:h-[120%] min-h-[600px] animate-spin-slow text-[500px]"></i>
+        </div>
+
+        <div class="absolute bottom-[-20%] -z-10 flex justify-center items-center w-full h-full">
+          <i
+            class="fas fa-hexagon text-green-700 opacity-70 md:h-[90%] sm:h-[120%] min-h-[600px] animate-spin-slow text-[500px]"></i>
+        </div>
+
+        <div class="absolute bottom-[-20%] -z-10 flex justify-center items-center w-full h-full">
+          <i
+            class="fas fa-hexagon text-green-700 opacity-70 blur-lg md:h-[90%] sm:h-[120%] min-h-[600px] animate-spin-slow text-[500px]"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Me Section -->
+  <section class="pt-40 pb-16" id="about">
+    <div class="flex flex-col md:flex-row max-w-[1200px] mx-auto justify-between items-center relative px-4">
+
+      <!-- About Me Text -->
+      <div class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2">
+        <h2 class="text-4xl md:text-6xl text-green-700 mb-6 md:mb-10">About Me</h2>
+        <p class="mb-6 max-w-xl px-2 md:px-0 text-justify">
+          I’m Samjhana, a web developer instructor with a passion for teaching
+          and coding. I specialize in React and front-end development, helping
+          students build real-world projects and master modern web technologies.
+          I also run a YouTube channel, CodeNest, where I create tutorials and
+          courses to guide aspiring developers in their journey toward successful
+          careers in tech. Outside of coding, I enjoy continuous learning and
+          sharing knowledge to inspire others to achieve their goals.
+        </p>
+        <button id="projectsBtn"
+          class="border border-green-700 rounded-full py-2 px-6 text-lg flex gap-2 items-center hover:bg-green-700 transition-all duration-500 cursor-pointer self-center md:self-start">
+          <span class="text-white hover:text-white transition-all duration-500">My Projects</span>
+        </button>
+      </div>
+      <!-- About Me Image -->
+      <div class="relative mt-8 md:mt-0 w-[280px] max-w-[280px] md:max-w-[400px] h-[250px] md:h-[350px] mx-auto">
+        <div class="absolute overflow-hidden rounded-[100px] h-full w-full">
+          <img src="./images/aboutme.jpeg" alt="About Me Image" class="h-full w-full object-cover" />
+        </div>
+        <div
+          class="absolute bottom-[-20px] left-[-20px] h-full w-[200px] bg-green-700 rounded-bl-[120px] rounded-tr-[120px] rounded-br-[20px] rounded-tl-[20px] -z-10">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="pt-40 pb-16 text-white">
+    <div class="max-w-[1200px] mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-12 text-green-600 text-center">My Skills</h2>
+      <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-12">
+
+        <!-- HTML -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <i class="devicon-html5-plain colored text-7xl"></i>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">HTML</p>
+        </div>
+
+        <!-- CSS -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <i class="devicon-css3-plain colored text-7xl"></i>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">CSS</p>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <i class="devicon-javascript-plain colored text-7xl"></i>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">JavaScript</p>
+        </div>
+
+        <!-- GitHub -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <i class="devicon-github-original text-7xl"></i>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">GitHub</p>
+        </div>
+
+
+        <!-- React -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <i class="devicon-react-original colored text-7xl"></i>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">ReactJS</p>
+        </div>
+
+        <!-- Redux -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <i class="devicon-redux-original colored text-7xl"></i>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Redux</p>
+        </div>
+
+        <!-- NextJS -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <div class="bg-white p-2 rounded">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
+              alt="NextJS" class="w-20 h-20 object-contain" />
+          </div>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">NextJS</p>
+        </div>
+
+        <!-- Tailwind CSS -->
+        <div class="flex flex-col items-center group cursor-pointer">
+          <i class="devicon-tailwindcss-plain colored text-7xl"></i>
+          <p class="text-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">TailwindCSS</p>
+        </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- Experience Section -->
+  <section id="experience" class="pt-40 pb-16 bg-black text-white">
+    <div class="max-w-[1200px] mx-auto px-4">
+      <h2 class="text-4xl font-bold text-green-700 mb-16 text-center">Experience</h2>
+      <div class="relative border-l-4 border-green-700 pl-8">
+
+
+        <!-- Experience 1 -->
+        <div class="mb-14 relative">
+          <div class="absolute -left-5 top-0 w-4 h-4 bg-green-700 rounded-full"></div>
+          <h3 class="text-2xl font-bold text-yellow-300">Front-End Developer</h3>
+          <p class="text-gray-400">Alex Apps</p>
+          <p class="text-sm text-gray-500 mb-4">2022 - Present</p>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Implementing reusable components.</li>
+            <li>Participating in large scale application.</li>
+            <li>Working on the performance of web applications.</li>
+            <li>Generating new ideas for better user experience.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="mb-14 relative">
+          <div class="absolute -left-5 top-0 w-4 h-4 bg-green-700 rounded-full"></div>
+          <h3 class="text-2xl font-bold text-yellow-300">Course Instructor</h3>
+          <p class="text-gray-400">Nucamp</p>
+          <p class="text-sm text-gray-500 mb-4">2023 - Present</p>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Explaining and facilitating web development concepts.</li>
+            <li>Help students with their assignments and grade them weekly.</li>
+            <li>Provide support for students through their learning journey.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="mb-14 relative">
+          <div class="absolute -left-5 top-0 w-4 h-4 bg-green-700 rounded-full"></div>
+          <h3 class="text-2xl font-bold text-yellow-300">Course Instructor</h3>
+          <p class="text-gray-400">Sprints</p>
+          <p class="text-sm text-gray-500 mb-4">2024 - Present</p>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Teaching JavaScript, React and TailwindCSS.</li>
+            <li>Participating in preparing course materials.</li>
+            <li>Helping students through their way in learning web development technologies.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="pt-40 pb-16">
+    <div class="max-w-[1200px] mx-auto px-4">
+      <div class="mb-12 text-center">
+        <h2 class="text-4xl font-bold text-green-700 mb-4">My Projects</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">
+          I have worked on a variety of web development projects, ranging from
+          responsive websites to full-stack applications and complex front-end interfaces.
+        </p>
+      </div>
+      <div id="projectsList" class="flex flex-col gap-20 max-w-[900px] mx-auto">
+        <!-- Projects will be inserted here by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="pt-40 pb-16 bg-black text-white">
+    <div class="max-w-[1200px] mx-auto px-4">
+      <div class="flex flex-col justify-between items-center relative">
+        <h2 class="text-4xl font-bold text-green-700 mb-12 text-center">Contact</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center w-full">
+          <!-- Contact Form -->
+          <div>
+            <h3 class="text-3xl text-yellow-300 mb-6">Get In Touch</h3>
+            <p class="text-gray-300 mb-8">
+              Feel free to reach out if you'd like to collaborate — you’re just a few clicks away!
+            </p>
+
+            <p id="successMessage" class="text-green-500 mb-4"></p>
+
+            <form id="contactForm" class="flex flex-col gap-4" novalidate>
+              <input type="text" name="from_name" id="fromName" placeholder="Your Name" required
+                class="h-12 rounded-lg bg-gray-200 px-4 text-black" />
+              <input type="email" name="from_email" id="fromEmail" placeholder="Your Email" required
+                class="h-12 rounded-lg bg-gray-200 px-4 text-black" />
+              <textarea name="message" id="message" rows="6" placeholder="Your Message" required
+                class="rounded-lg bg-gray-200 p-4 text-black resize-none"></textarea>
+              <button type="submit"
+                class="w-full h-12 flex items-center justify-center border border-green-700 rounded-full text-lg text-white hover:bg-green-700 transition-all duration-500 cursor-pointer">
+                Send
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Image and Links -->
+          <div class="flex flex-col items-center justify-center text-center">
+            <img src="images/email.png" alt="Contact" class="w-60 h-60 object-contain mb-8" />
+
+            <div class="flex flex-col items-center gap-3">
+              <a href="mailto:saammagar00@gmail.com"
+                class="flex items-center gap-2 text-gray-300 hover:text-green-500 transition">
+                <i class="fas fa-envelope text-lg"></i>
+                <span>saammagar00@gmail.com</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/samjhana-gharti-magar"
+                class="flex items-center gap-2 text-gray-300 hover:text-green-500 transition">
+                <i class="fab fa-linkedin"></i>
+                <span>Samjhana Gharti Magar</span>
+              </a>
+              <a href="https://github.com/notKuina" target="_blank"
+                class="flex items-center gap-2 text-gray-300 hover:text-green-500 transition">
+                <i class="fab fa-github text-lg"></i>
+                <span>github.com/notKuina</span>
+              </a>
+              <a href="tel:+1234567890" class="flex items-center gap-2 text-gray-300 hover:text-green-500 transition">
+                <i class="fas fa-phone text-lg"></i>
+                <span>+123 456 7890</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="px-4 bg-black text-white">
+
+    <!-- Divider -->
+    <div class="w-full h-[1px] bg-gray-700">
+
+      <!-- Footer Content in One Line -->
+      <div
+        class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 pt-2 text-sm text-gray-400">
+
+        <!-- Footer Links -->
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-green-500 transition">Privacy Policy</a>
+          <a href="#" class="hover:text-green-500 transition">Terms of Service</a>
+          <a href="#" class="hover:text-green-500 transition">Sitemap</a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex gap-6 text-xl">
+          <a href="mailto:saammagar00@gmail.com" class="hover:text-green-500 transition" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://github.com/notKuina" target="_blank" class="hover:text-green-500 transition"
+            aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://instagram.com/notkuina" target="_blank" class="hover:text-green-500 transition"
+            aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/samjhana-gharti-magar" target="_blank"
+            class="hover:text-green-500 transition" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-xs text-yellow-300 text-center md:text-right">
+          © 2025 Samjhana. All Rights Reserved. Made with passion.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+
+
+  <a href="#top" id="backToTopBtn"
+    class="hidden fixed bottom-6 right-6 z-50 text-green-700 p-3 rounded-full shadow-lg hover:bg-white hover:text-green-700 transition"
+    aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+</body>
+
+</html>
