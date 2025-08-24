@@ -68,14 +68,7 @@ export default function Header() {
                 </a>
               </li>
             ))}
-            <li> 
-              <button
-                onClick={downloadCV}
-                className="border border-green-700 rounded-full py-2 px-4 w-full text-left hover:bg-green-700 transition"
-              >
-                Resume
-              </button>
-            </li>
+
           </ul>
         </div>
       )}

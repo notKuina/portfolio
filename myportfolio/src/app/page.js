@@ -1,14 +1,16 @@
 "use client";
 
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+
+import Hero from "@/section/Hero";
+import About from "@/section/About";
+import Skills from "@/section/Skills";
+import Experience from "@/section/Experience";
+import Project from "./Projects/page";
+import Contact from "./Contact/page";
+
 
 
 export default function Home() {
@@ -19,7 +21,7 @@ export default function Home() {
       <About />
       <Skills />
       <Experience />
-      <Projects />
+      <Project />
       <Contact />
       <Footer />
       <BackToTop />
