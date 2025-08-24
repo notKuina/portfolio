@@ -20,7 +20,9 @@ function BackToTop() {
     visible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-4 right-4 p-3 rounded-full bg-green-600 text-white shadow-lg hover:bg-green-700 transition"
+        aria-label="Scroll to top"
+        tabIndex={0}
+        className="fixed bottom-4 right-4 w-10 h-10 p-3 rounded-full flex items-center justify-center bg-green-600 text-white shadow-lg hover:bg-green-700 transition focus:outline-none focus:ring-2 focus:ring-green-400"
       >
         ↑
       </button>

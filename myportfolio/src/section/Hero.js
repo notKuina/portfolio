@@ -9,12 +9,12 @@ function Hero() {
     };
   return <>
   
-  <section className="pt-40 pb-16">
+  <section className="pt-20 pb-10">
     <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto justify-between items-center relative px-4">
       <div id="hero-text" className=" md:w-1/2  text-white">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Welcome to My Portfolio</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Hi,I am Samjhana Gharti Magar</h1>
         <p className="text-gray-300 text-base md:text-lg mb-8">
-          I build amazing web experiences using modern technologies.
+          I can build amazing and functional websites.
         </p>
         <button
          onClick={scrollToContact}
